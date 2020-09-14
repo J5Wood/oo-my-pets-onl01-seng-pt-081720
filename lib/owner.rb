@@ -44,7 +44,24 @@ class Owner
   end
 
   def walk_dogs
-    Dog.all.collect { |x| x.mood = "happy" }
+    Dog.all.collect { |dog| dog.mood = "happy" }
   end
 
+  def feed_cats
+    Cat.all.collect { |cat| cat.mood = "happy" }
+  end
+
+  def sell_pets
+    Cat.all.collect do |cat|
+      if cat.owner == self
+        cat.owner = nil
+        cat.mood = "nervous"
+      end
+    end
+    Dog.all.collect do |dog|
+      if dog.owner == self
+        dog.owner = nil
+        dog.mood = "nervous"
+      end
+    end
 end
