@@ -43,5 +43,12 @@ class Owner
     name = Dog.new(name, self)
   end
 
+  def walk_dogs
+    Dog.all.collect do |x| 
+      if x.owner ==  self
+        x.mood == "happy"
+      end
+    end
+  end
 
 end
