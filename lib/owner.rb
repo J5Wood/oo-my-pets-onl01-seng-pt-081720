@@ -36,11 +36,7 @@ class Owner
   end
 
   def buy_cat(name)
-    Cat.all.find do |x|
-      if x.name == name
-        x.owner == self
-      end
-    end
+    name = Cat.new(name, self)
   end
 
 
