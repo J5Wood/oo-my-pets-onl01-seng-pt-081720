@@ -44,7 +44,7 @@ class Owner
   end
 
   def walk_dogs
-    Dog.all.collect {} |x| x.mood = "happy" }
+    Dog.all.collect { |x| x.mood = "happy" }
   end
 
 end
