@@ -69,12 +69,12 @@ class Owner
   def list_pets
     dog_count = 0
     cat_count = 0
-    Cat.all.collect do |cat| 
+    Cat.all.collect do |cat|
       if cat.owner == self
         cat_count += 1
       end
     end
-    Dog.all.collect do |dog| 
+    Dog.all.collect do |dog|
       if dog.owner == self
         dog_count += 1
       end
@@ -83,4 +83,4 @@ class Owner
   end
 
 
-end     
+end
